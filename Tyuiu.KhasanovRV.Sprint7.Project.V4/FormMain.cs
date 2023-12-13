@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tyuiu.KhasanovRV.Sprint7.Project.V4.Lib;
 
 namespace Tyuiu.KhasanovRV.Sprint7.Project.V4
 {
@@ -16,6 +18,10 @@ namespace Tyuiu.KhasanovRV.Sprint7.Project.V4
         {
             InitializeComponent();
         }
+        
+        DataService ds = new DataService();
+        string openFilePath;
+        int cols, rows;
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -29,12 +35,66 @@ namespace Tyuiu.KhasanovRV.Sprint7.Project.V4
 
         private void buttonOpen_KRV_Click(object sender, EventArgs e)
         {
+            openFileDialogTable_KRV.ShowDialog();
+            openFilePath = openFileDialogTable_KRV.FileName;
 
+            string[,] arrayValues = ds.LoadFromFileData(openFilePath);
+            dataGridViewTable_KRV.ColumnCount = cols = arrayValues.GetLength(1);
+            dataGridViewTable_KRV.RowCount = rows = arrayValues.GetLength(0);
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols-1; j++)
+                {
+                    dataGridViewTable_KRV.Rows[i].Cells[j].Value = arrayValues[i, j];
+                }
+            }
+
+            for (int i = 0;i < rows; i++)
+            {
+                if (arrayValues[i,3] == "True")
+                    dataGridViewTable_KRV.Rows[i].Cells[3].Value = true;
+                else
+                    dataGridViewTable_KRV.Rows[i].Cells[3].Value = false;
+            }
         }
 
         private void buttonDownload_KRV_Click(object sender, EventArgs e)
         {
+            saveFileDialogTable_KRV.FileName = "OutPutFileTask7.csv";
+            saveFileDialogTable_KRV.InitialDirectory = Directory.GetCurrentDirectory();
+            saveFileDialogTable_KRV.ShowDialog();
 
+            string path = saveFileDialogTable_KRV.FileName;
+
+            FileInfo fileInfo = new FileInfo(path);
+            bool fileExists = fileInfo.Exists;
+            if (fileExists)
+            {
+                File.Delete(path);
+            }
+
+            int rows = dataGridViewTable_KRV.RowCount;
+            int columns = dataGridViewTable_KRV.ColumnCount;
+            string str = "";
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    if (j != columns - 1)
+                    {
+                        str = str + dataGridViewTable_KRV.Rows[i].Cells[j].Value + ";";
+                    }
+                    else
+                    {
+                        str = str + dataGridViewTable_KRV.Rows[i].Cells[j].Value;
+                    }
+                }
+
+                File.AppendAllText(path, str + Environment.NewLine);
+                str = "";
+            }
         }
 
         private void buttonAdd_KRV_Click(object sender, EventArgs e)

@@ -42,10 +42,12 @@
             this.buttonInfo_KRV = new System.Windows.Forms.Button();
             this.buttonAdd_KRV = new System.Windows.Forms.Button();
             this.buttonDownload_KRV = new System.Windows.Forms.Button();
-            this.Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Book = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Finished = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.saveFileDialogTable_KRV = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialogTable_KRV = new System.Windows.Forms.OpenFileDialog();
+            this.Autor_KRV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Book_KRV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Year_KRV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Finished_KRV = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.menuStrip_KRV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable_KRV)).BeginInit();
             this.groupBoxMoves_KRV.SuspendLayout();
@@ -122,10 +124,10 @@
             this.dataGridViewTable_KRV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewTable_KRV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTable_KRV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Autor,
-            this.Book,
-            this.Year,
-            this.Finished});
+            this.Autor_KRV,
+            this.Book_KRV,
+            this.Year_KRV,
+            this.Finished_KRV});
             this.dataGridViewTable_KRV.Location = new System.Drawing.Point(12, 31);
             this.dataGridViewTable_KRV.Name = "dataGridViewTable_KRV";
             this.dataGridViewTable_KRV.RowHeadersWidth = 51;
@@ -194,29 +196,33 @@
             this.buttonDownload_KRV.UseVisualStyleBackColor = true;
             this.buttonDownload_KRV.Click += new System.EventHandler(this.buttonDownload_KRV_Click);
             // 
-            // Autor
+            // openFileDialogTable_KRV
             // 
-            this.Autor.HeaderText = "Автор";
-            this.Autor.MinimumWidth = 6;
-            this.Autor.Name = "Autor";
+            this.openFileDialogTable_KRV.FileName = "openFileDialog1";
             // 
-            // Book
+            // Autor_KRV
             // 
-            this.Book.HeaderText = "Название";
-            this.Book.MinimumWidth = 6;
-            this.Book.Name = "Book";
+            this.Autor_KRV.HeaderText = "Автор";
+            this.Autor_KRV.MinimumWidth = 6;
+            this.Autor_KRV.Name = "Autor_KRV";
             // 
-            // Year
+            // Book_KRV
             // 
-            this.Year.HeaderText = "Год";
-            this.Year.MinimumWidth = 6;
-            this.Year.Name = "Year";
+            this.Book_KRV.HeaderText = "Название";
+            this.Book_KRV.MinimumWidth = 6;
+            this.Book_KRV.Name = "Book_KRV";
             // 
-            // Finished
+            // Year_KRV
             // 
-            this.Finished.HeaderText = "Прочитано";
-            this.Finished.MinimumWidth = 6;
-            this.Finished.Name = "Finished";
+            this.Year_KRV.HeaderText = "Год издания";
+            this.Year_KRV.MinimumWidth = 6;
+            this.Year_KRV.Name = "Year_KRV";
+            // 
+            // Finished_KRV
+            // 
+            this.Finished_KRV.HeaderText = "Прочитано";
+            this.Finished_KRV.MinimumWidth = 6;
+            this.Finished_KRV.Name = "Finished_KRV";
             // 
             // FormMain
             // 
@@ -255,10 +261,12 @@
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem_KRV;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem_KRV;
         private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem_KRV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Autor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Book;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Year;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Finished;
+        private System.Windows.Forms.SaveFileDialog saveFileDialogTable_KRV;
+        private System.Windows.Forms.OpenFileDialog openFileDialogTable_KRV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Autor_KRV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Book_KRV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Year_KRV;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Finished_KRV;
     }
 }
 
