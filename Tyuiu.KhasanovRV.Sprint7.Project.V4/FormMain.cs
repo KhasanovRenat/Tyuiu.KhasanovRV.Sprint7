@@ -59,7 +59,7 @@ namespace Tyuiu.KhasanovRV.Sprint7.Project.V4
             }
         }
 
-        private void buttonDownload_KRV_Click(object sender, EventArgs e)
+        private void buttonSave_KRV_Click(object sender, EventArgs e)
         {
             saveFileDialogTable_KRV.FileName = "OutPutFileTask7.csv";
             saveFileDialogTable_KRV.InitialDirectory = Directory.GetCurrentDirectory();
@@ -104,7 +104,18 @@ namespace Tyuiu.KhasanovRV.Sprint7.Project.V4
 
         private void buttonInfo_KRV_Click(object sender, EventArgs e)
         {
+            FormAbout formAbout = new FormAbout();
+            formAbout.ShowDialog();
+        }
 
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            Finished_KRV.SortMode = DataGridViewColumnSortMode.Automatic;
+        }
+
+        private void buttonSearch_KRV_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void dataGridViewTable_KRV_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)

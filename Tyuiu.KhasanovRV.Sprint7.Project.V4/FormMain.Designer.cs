@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip_KRV = new System.Windows.Forms.MenuStrip();
             this.действияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem_KRV = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,6 +45,9 @@
             this.buttonDownload_KRV = new System.Windows.Forms.Button();
             this.saveFileDialogTable_KRV = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialogTable_KRV = new System.Windows.Forms.OpenFileDialog();
+            this.toolTipWiki_KRV = new System.Windows.Forms.ToolTip(this.components);
+            this.textBoxSearch_KRV = new System.Windows.Forms.TextBox();
+            this.buttonSearch_KRV = new System.Windows.Forms.Button();
             this.Autor_KRV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Book_KRV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Year_KRV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,24 +86,28 @@
             this.openToolStripMenuItem_KRV.Name = "openToolStripMenuItem_KRV";
             this.openToolStripMenuItem_KRV.Size = new System.Drawing.Size(166, 26);
             this.openToolStripMenuItem_KRV.Text = "Открыть";
+            this.openToolStripMenuItem_KRV.Click += new System.EventHandler(this.buttonOpen_KRV_Click);
             // 
             // saveToolStripMenuItem_KRV
             // 
             this.saveToolStripMenuItem_KRV.Name = "saveToolStripMenuItem_KRV";
             this.saveToolStripMenuItem_KRV.Size = new System.Drawing.Size(166, 26);
             this.saveToolStripMenuItem_KRV.Text = "Сохранить";
+            this.saveToolStripMenuItem_KRV.Click += new System.EventHandler(this.buttonSave_KRV_Click);
             // 
             // addToolStripMenuItem_KRV
             // 
             this.addToolStripMenuItem_KRV.Name = "addToolStripMenuItem_KRV";
             this.addToolStripMenuItem_KRV.Size = new System.Drawing.Size(166, 26);
             this.addToolStripMenuItem_KRV.Text = "Добавить";
+            this.addToolStripMenuItem_KRV.Click += new System.EventHandler(this.buttonAdd_KRV_Click);
             // 
             // infoToolStripMenuItem_KRV
             // 
             this.infoToolStripMenuItem_KRV.Name = "infoToolStripMenuItem_KRV";
             this.infoToolStripMenuItem_KRV.Size = new System.Drawing.Size(166, 26);
             this.infoToolStripMenuItem_KRV.Text = "Инфо";
+            this.infoToolStripMenuItem_KRV.Click += new System.EventHandler(this.buttonInfo_KRV_Click);
             // 
             // aboutProgramToolStripMenuItem_KRV
             // 
@@ -128,11 +136,11 @@
             this.Book_KRV,
             this.Year_KRV,
             this.Finished_KRV});
-            this.dataGridViewTable_KRV.Location = new System.Drawing.Point(12, 31);
+            this.dataGridViewTable_KRV.Location = new System.Drawing.Point(12, 96);
             this.dataGridViewTable_KRV.Name = "dataGridViewTable_KRV";
             this.dataGridViewTable_KRV.RowHeadersWidth = 51;
             this.dataGridViewTable_KRV.RowTemplate.Height = 24;
-            this.dataGridViewTable_KRV.Size = new System.Drawing.Size(758, 334);
+            this.dataGridViewTable_KRV.Size = new System.Drawing.Size(758, 369);
             this.dataGridViewTable_KRV.TabIndex = 1;
             this.dataGridViewTable_KRV.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridViewTable_KRV_RowPrePaint);
             // 
@@ -145,9 +153,9 @@
             this.groupBoxMoves_KRV.Controls.Add(this.buttonInfo_KRV);
             this.groupBoxMoves_KRV.Controls.Add(this.buttonAdd_KRV);
             this.groupBoxMoves_KRV.Controls.Add(this.buttonDownload_KRV);
-            this.groupBoxMoves_KRV.Location = new System.Drawing.Point(776, 31);
+            this.groupBoxMoves_KRV.Location = new System.Drawing.Point(776, 96);
             this.groupBoxMoves_KRV.Name = "groupBoxMoves_KRV";
-            this.groupBoxMoves_KRV.Size = new System.Drawing.Size(240, 334);
+            this.groupBoxMoves_KRV.Size = new System.Drawing.Size(240, 369);
             this.groupBoxMoves_KRV.TabIndex = 2;
             this.groupBoxMoves_KRV.TabStop = false;
             this.groupBoxMoves_KRV.Text = "Действия";
@@ -155,9 +163,10 @@
             // buttonOpen_KRV
             // 
             this.buttonOpen_KRV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOpen_KRV.Location = new System.Drawing.Point(6, 15);
+            this.buttonOpen_KRV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonOpen_KRV.Location = new System.Drawing.Point(6, 21);
             this.buttonOpen_KRV.Name = "buttonOpen_KRV";
-            this.buttonOpen_KRV.Size = new System.Drawing.Size(226, 48);
+            this.buttonOpen_KRV.Size = new System.Drawing.Size(228, 60);
             this.buttonOpen_KRV.TabIndex = 0;
             this.buttonOpen_KRV.Text = "Открыть дневник";
             this.buttonOpen_KRV.UseVisualStyleBackColor = true;
@@ -166,9 +175,10 @@
             // buttonInfo_KRV
             // 
             this.buttonInfo_KRV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonInfo_KRV.Location = new System.Drawing.Point(6, 177);
+            this.buttonInfo_KRV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonInfo_KRV.Location = new System.Drawing.Point(6, 219);
             this.buttonInfo_KRV.Name = "buttonInfo_KRV";
-            this.buttonInfo_KRV.Size = new System.Drawing.Size(226, 48);
+            this.buttonInfo_KRV.Size = new System.Drawing.Size(228, 60);
             this.buttonInfo_KRV.TabIndex = 0;
             this.buttonInfo_KRV.Text = "Информация о разработчике";
             this.buttonInfo_KRV.UseVisualStyleBackColor = true;
@@ -177,9 +187,10 @@
             // buttonAdd_KRV
             // 
             this.buttonAdd_KRV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAdd_KRV.Location = new System.Drawing.Point(6, 123);
+            this.buttonAdd_KRV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAdd_KRV.Location = new System.Drawing.Point(6, 153);
             this.buttonAdd_KRV.Name = "buttonAdd_KRV";
-            this.buttonAdd_KRV.Size = new System.Drawing.Size(226, 48);
+            this.buttonAdd_KRV.Size = new System.Drawing.Size(228, 60);
             this.buttonAdd_KRV.TabIndex = 0;
             this.buttonAdd_KRV.Text = "Добавить книгу";
             this.buttonAdd_KRV.UseVisualStyleBackColor = true;
@@ -188,17 +199,42 @@
             // buttonDownload_KRV
             // 
             this.buttonDownload_KRV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonDownload_KRV.Location = new System.Drawing.Point(6, 69);
+            this.buttonDownload_KRV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDownload_KRV.Location = new System.Drawing.Point(6, 87);
             this.buttonDownload_KRV.Name = "buttonDownload_KRV";
-            this.buttonDownload_KRV.Size = new System.Drawing.Size(226, 48);
+            this.buttonDownload_KRV.Size = new System.Drawing.Size(228, 60);
             this.buttonDownload_KRV.TabIndex = 0;
             this.buttonDownload_KRV.Text = "Сохранить дневник";
             this.buttonDownload_KRV.UseVisualStyleBackColor = true;
-            this.buttonDownload_KRV.Click += new System.EventHandler(this.buttonDownload_KRV_Click);
+            this.buttonDownload_KRV.Click += new System.EventHandler(this.buttonSave_KRV_Click);
             // 
             // openFileDialogTable_KRV
             // 
             this.openFileDialogTable_KRV.FileName = "openFileDialog1";
+            // 
+            // textBoxSearch_KRV
+            // 
+            this.textBoxSearch_KRV.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxSearch_KRV.Location = new System.Drawing.Point(12, 49);
+            this.textBoxSearch_KRV.Multiline = true;
+            this.textBoxSearch_KRV.Name = "textBoxSearch_KRV";
+            this.textBoxSearch_KRV.Size = new System.Drawing.Size(758, 37);
+            this.textBoxSearch_KRV.TabIndex = 3;
+            this.textBoxSearch_KRV.Text = "Ffgh";
+            // 
+            // buttonSearch_KRV
+            // 
+            this.buttonSearch_KRV.BackColor = System.Drawing.Color.Gold;
+            this.buttonSearch_KRV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearch_KRV.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSearch_KRV.ForeColor = System.Drawing.Color.White;
+            this.buttonSearch_KRV.Location = new System.Drawing.Point(776, 49);
+            this.buttonSearch_KRV.Name = "buttonSearch_KRV";
+            this.buttonSearch_KRV.Size = new System.Drawing.Size(240, 41);
+            this.buttonSearch_KRV.TabIndex = 4;
+            this.buttonSearch_KRV.Text = "Поиск";
+            this.buttonSearch_KRV.UseVisualStyleBackColor = false;
+            this.buttonSearch_KRV.Click += new System.EventHandler(this.buttonSearch_KRV_Click);
             // 
             // Autor_KRV
             // 
@@ -228,14 +264,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 377);
+            this.ClientSize = new System.Drawing.Size(1028, 477);
+            this.Controls.Add(this.buttonSearch_KRV);
+            this.Controls.Add(this.textBoxSearch_KRV);
             this.Controls.Add(this.groupBoxMoves_KRV);
             this.Controls.Add(this.dataGridViewTable_KRV);
             this.Controls.Add(this.menuStrip_KRV);
             this.MainMenuStrip = this.menuStrip_KRV;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Моя библиотека";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.menuStrip_KRV.ResumeLayout(false);
             this.menuStrip_KRV.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable_KRV)).EndInit();
@@ -263,6 +302,9 @@
         private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem_KRV;
         private System.Windows.Forms.SaveFileDialog saveFileDialogTable_KRV;
         private System.Windows.Forms.OpenFileDialog openFileDialogTable_KRV;
+        private System.Windows.Forms.ToolTip toolTipWiki_KRV;
+        private System.Windows.Forms.TextBox textBoxSearch_KRV;
+        private System.Windows.Forms.Button buttonSearch_KRV;
         private System.Windows.Forms.DataGridViewTextBoxColumn Autor_KRV;
         private System.Windows.Forms.DataGridViewTextBoxColumn Book_KRV;
         private System.Windows.Forms.DataGridViewTextBoxColumn Year_KRV;
