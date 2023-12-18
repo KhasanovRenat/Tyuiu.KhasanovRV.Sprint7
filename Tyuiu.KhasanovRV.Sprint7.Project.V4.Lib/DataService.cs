@@ -28,5 +28,22 @@ namespace Tyuiu.KhasanovRV.Sprint7.Project.V4.Lib
             }
             return arrayValues;
         }
+
+        public string Readed(string[,] array)
+        {
+            int rows = array.GetLength(0);
+            int cntTrue = 0, cntAll = 0;
+            for (int i = 0; i < rows; i++)
+            {
+                if (array[i, 3] == "True")
+                {
+                    cntAll++;
+                    cntTrue++;
+                }
+                else
+                    cntAll++;
+            }
+            return $"{cntTrue}/{cntAll}";
+        }
     }
 }

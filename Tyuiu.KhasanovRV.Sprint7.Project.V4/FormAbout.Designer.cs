@@ -64,6 +64,7 @@
             this.buttonOK_KRV.TabIndex = 3;
             this.buttonOK_KRV.Text = "Ок";
             this.buttonOK_KRV.UseVisualStyleBackColor = true;
+            this.buttonOK_KRV.Click += new System.EventHandler(this.buttonOK_KRV_Click);
             // 
             // FormAbout
             // 

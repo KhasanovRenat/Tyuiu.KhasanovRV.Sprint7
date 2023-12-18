@@ -21,8 +21,7 @@ namespace Tyuiu.KhasanovRV.Sprint7.Project.V4
         
         DataService ds = new DataService();
         string openFilePath;
-        int cols, rows;
-
+        public static string[,] arrayValues;
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -35,10 +34,11 @@ namespace Tyuiu.KhasanovRV.Sprint7.Project.V4
 
         private void buttonOpen_KRV_Click(object sender, EventArgs e)
         {
+            int cols, rows;
             openFileDialogTable_KRV.ShowDialog();
             openFilePath = openFileDialogTable_KRV.FileName;
+            arrayValues = ds.LoadFromFileData(openFilePath);
 
-            string[,] arrayValues = ds.LoadFromFileData(openFilePath);
             dataGridViewTable_KRV.ColumnCount = cols = arrayValues.GetLength(1);
             dataGridViewTable_KRV.RowCount = rows = arrayValues.GetLength(0);
 
@@ -108,14 +108,31 @@ namespace Tyuiu.KhasanovRV.Sprint7.Project.V4
             formAbout.ShowDialog();
         }
 
+
         private void FormMain_Load(object sender, EventArgs e)
         {
             Finished_KRV.SortMode = DataGridViewColumnSortMode.Automatic;
+
+
+            
         }
 
-        private void buttonSearch_KRV_Click(object sender, EventArgs e)
+        private void buttonRefresh_KRV_Click(object sender, EventArgs e)
         {
-            
+            int rows = dataGridViewTable_KRV.RowCount;
+            int columns = dataGridViewTable_KRV.ColumnCount;
+            string str = "";
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    str += dataGridViewTable_KRV.Rows[i].Cells[j].Value;
+                    arrayValues[i, j] = str;
+                    str = "";
+                }
+                
+            }
+            textBoxRead_KRV.Text = ds.Readed(arrayValues);
         }
 
         private void dataGridViewTable_KRV_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)

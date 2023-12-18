@@ -38,20 +38,21 @@
             this.aboutProgramToolStripMenuItem_KRV = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewTable_KRV = new System.Windows.Forms.DataGridView();
+            this.Autor_KRV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Book_KRV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Year_KRV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Finished_KRV = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBoxMoves_KRV = new System.Windows.Forms.GroupBox();
             this.buttonOpen_KRV = new System.Windows.Forms.Button();
+            this.buttonRefresh_KRV = new System.Windows.Forms.Button();
             this.buttonInfo_KRV = new System.Windows.Forms.Button();
             this.buttonAdd_KRV = new System.Windows.Forms.Button();
             this.buttonDownload_KRV = new System.Windows.Forms.Button();
             this.saveFileDialogTable_KRV = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialogTable_KRV = new System.Windows.Forms.OpenFileDialog();
             this.toolTipWiki_KRV = new System.Windows.Forms.ToolTip(this.components);
-            this.textBoxSearch_KRV = new System.Windows.Forms.TextBox();
-            this.buttonSearch_KRV = new System.Windows.Forms.Button();
-            this.Autor_KRV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Book_KRV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Year_KRV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Finished_KRV = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.textBoxRead_KRV = new System.Windows.Forms.TextBox();
+            this.labelRead_KRV = new System.Windows.Forms.Label();
             this.menuStrip_KRV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable_KRV)).BeginInit();
             this.groupBoxMoves_KRV.SuspendLayout();
@@ -136,105 +137,13 @@
             this.Book_KRV,
             this.Year_KRV,
             this.Finished_KRV});
-            this.dataGridViewTable_KRV.Location = new System.Drawing.Point(12, 96);
+            this.dataGridViewTable_KRV.Location = new System.Drawing.Point(12, 31);
             this.dataGridViewTable_KRV.Name = "dataGridViewTable_KRV";
             this.dataGridViewTable_KRV.RowHeadersWidth = 51;
             this.dataGridViewTable_KRV.RowTemplate.Height = 24;
-            this.dataGridViewTable_KRV.Size = new System.Drawing.Size(758, 369);
+            this.dataGridViewTable_KRV.Size = new System.Drawing.Size(758, 434);
             this.dataGridViewTable_KRV.TabIndex = 1;
             this.dataGridViewTable_KRV.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridViewTable_KRV_RowPrePaint);
-            // 
-            // groupBoxMoves_KRV
-            // 
-            this.groupBoxMoves_KRV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxMoves_KRV.BackColor = System.Drawing.SystemColors.Menu;
-            this.groupBoxMoves_KRV.Controls.Add(this.buttonOpen_KRV);
-            this.groupBoxMoves_KRV.Controls.Add(this.buttonInfo_KRV);
-            this.groupBoxMoves_KRV.Controls.Add(this.buttonAdd_KRV);
-            this.groupBoxMoves_KRV.Controls.Add(this.buttonDownload_KRV);
-            this.groupBoxMoves_KRV.Location = new System.Drawing.Point(776, 96);
-            this.groupBoxMoves_KRV.Name = "groupBoxMoves_KRV";
-            this.groupBoxMoves_KRV.Size = new System.Drawing.Size(240, 369);
-            this.groupBoxMoves_KRV.TabIndex = 2;
-            this.groupBoxMoves_KRV.TabStop = false;
-            this.groupBoxMoves_KRV.Text = "Действия";
-            // 
-            // buttonOpen_KRV
-            // 
-            this.buttonOpen_KRV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOpen_KRV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonOpen_KRV.Location = new System.Drawing.Point(6, 21);
-            this.buttonOpen_KRV.Name = "buttonOpen_KRV";
-            this.buttonOpen_KRV.Size = new System.Drawing.Size(228, 60);
-            this.buttonOpen_KRV.TabIndex = 0;
-            this.buttonOpen_KRV.Text = "Открыть дневник";
-            this.buttonOpen_KRV.UseVisualStyleBackColor = true;
-            this.buttonOpen_KRV.Click += new System.EventHandler(this.buttonOpen_KRV_Click);
-            // 
-            // buttonInfo_KRV
-            // 
-            this.buttonInfo_KRV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonInfo_KRV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonInfo_KRV.Location = new System.Drawing.Point(6, 219);
-            this.buttonInfo_KRV.Name = "buttonInfo_KRV";
-            this.buttonInfo_KRV.Size = new System.Drawing.Size(228, 60);
-            this.buttonInfo_KRV.TabIndex = 0;
-            this.buttonInfo_KRV.Text = "Информация о разработчике";
-            this.buttonInfo_KRV.UseVisualStyleBackColor = true;
-            this.buttonInfo_KRV.Click += new System.EventHandler(this.buttonInfo_KRV_Click);
-            // 
-            // buttonAdd_KRV
-            // 
-            this.buttonAdd_KRV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAdd_KRV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonAdd_KRV.Location = new System.Drawing.Point(6, 153);
-            this.buttonAdd_KRV.Name = "buttonAdd_KRV";
-            this.buttonAdd_KRV.Size = new System.Drawing.Size(228, 60);
-            this.buttonAdd_KRV.TabIndex = 0;
-            this.buttonAdd_KRV.Text = "Добавить книгу";
-            this.buttonAdd_KRV.UseVisualStyleBackColor = true;
-            this.buttonAdd_KRV.Click += new System.EventHandler(this.buttonAdd_KRV_Click);
-            // 
-            // buttonDownload_KRV
-            // 
-            this.buttonDownload_KRV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonDownload_KRV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDownload_KRV.Location = new System.Drawing.Point(6, 87);
-            this.buttonDownload_KRV.Name = "buttonDownload_KRV";
-            this.buttonDownload_KRV.Size = new System.Drawing.Size(228, 60);
-            this.buttonDownload_KRV.TabIndex = 0;
-            this.buttonDownload_KRV.Text = "Сохранить дневник";
-            this.buttonDownload_KRV.UseVisualStyleBackColor = true;
-            this.buttonDownload_KRV.Click += new System.EventHandler(this.buttonSave_KRV_Click);
-            // 
-            // openFileDialogTable_KRV
-            // 
-            this.openFileDialogTable_KRV.FileName = "openFileDialog1";
-            // 
-            // textBoxSearch_KRV
-            // 
-            this.textBoxSearch_KRV.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxSearch_KRV.Location = new System.Drawing.Point(12, 49);
-            this.textBoxSearch_KRV.Multiline = true;
-            this.textBoxSearch_KRV.Name = "textBoxSearch_KRV";
-            this.textBoxSearch_KRV.Size = new System.Drawing.Size(758, 37);
-            this.textBoxSearch_KRV.TabIndex = 3;
-            this.textBoxSearch_KRV.Text = "Ffgh";
-            // 
-            // buttonSearch_KRV
-            // 
-            this.buttonSearch_KRV.BackColor = System.Drawing.Color.Gold;
-            this.buttonSearch_KRV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSearch_KRV.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSearch_KRV.ForeColor = System.Drawing.Color.White;
-            this.buttonSearch_KRV.Location = new System.Drawing.Point(776, 49);
-            this.buttonSearch_KRV.Name = "buttonSearch_KRV";
-            this.buttonSearch_KRV.Size = new System.Drawing.Size(240, 41);
-            this.buttonSearch_KRV.TabIndex = 4;
-            this.buttonSearch_KRV.Text = "Поиск";
-            this.buttonSearch_KRV.UseVisualStyleBackColor = false;
-            this.buttonSearch_KRV.Click += new System.EventHandler(this.buttonSearch_KRV_Click);
             // 
             // Autor_KRV
             // 
@@ -260,13 +169,108 @@
             this.Finished_KRV.MinimumWidth = 6;
             this.Finished_KRV.Name = "Finished_KRV";
             // 
+            // groupBoxMoves_KRV
+            // 
+            this.groupBoxMoves_KRV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxMoves_KRV.BackColor = System.Drawing.SystemColors.Menu;
+            this.groupBoxMoves_KRV.Controls.Add(this.buttonOpen_KRV);
+            this.groupBoxMoves_KRV.Controls.Add(this.buttonRefresh_KRV);
+            this.groupBoxMoves_KRV.Controls.Add(this.buttonInfo_KRV);
+            this.groupBoxMoves_KRV.Controls.Add(this.buttonAdd_KRV);
+            this.groupBoxMoves_KRV.Controls.Add(this.buttonDownload_KRV);
+            this.groupBoxMoves_KRV.Location = new System.Drawing.Point(776, 31);
+            this.groupBoxMoves_KRV.Name = "groupBoxMoves_KRV";
+            this.groupBoxMoves_KRV.Size = new System.Drawing.Size(240, 358);
+            this.groupBoxMoves_KRV.TabIndex = 2;
+            this.groupBoxMoves_KRV.TabStop = false;
+            this.groupBoxMoves_KRV.Text = "Действия";
+            // 
+            // buttonOpen_KRV
+            // 
+            this.buttonOpen_KRV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonOpen_KRV.Location = new System.Drawing.Point(6, 21);
+            this.buttonOpen_KRV.Name = "buttonOpen_KRV";
+            this.buttonOpen_KRV.Size = new System.Drawing.Size(228, 60);
+            this.buttonOpen_KRV.TabIndex = 0;
+            this.buttonOpen_KRV.Text = "Открыть дневник";
+            this.buttonOpen_KRV.UseVisualStyleBackColor = true;
+            this.buttonOpen_KRV.Click += new System.EventHandler(this.buttonOpen_KRV_Click);
+            // 
+            // buttonRefresh_KRV
+            // 
+            this.buttonRefresh_KRV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonRefresh_KRV.Location = new System.Drawing.Point(6, 285);
+            this.buttonRefresh_KRV.Name = "buttonRefresh_KRV";
+            this.buttonRefresh_KRV.Size = new System.Drawing.Size(228, 60);
+            this.buttonRefresh_KRV.TabIndex = 0;
+            this.buttonRefresh_KRV.Text = "Обновить";
+            this.buttonRefresh_KRV.UseVisualStyleBackColor = true;
+            this.buttonRefresh_KRV.Click += new System.EventHandler(this.buttonRefresh_KRV_Click);
+            // 
+            // buttonInfo_KRV
+            // 
+            this.buttonInfo_KRV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonInfo_KRV.Location = new System.Drawing.Point(6, 219);
+            this.buttonInfo_KRV.Name = "buttonInfo_KRV";
+            this.buttonInfo_KRV.Size = new System.Drawing.Size(228, 60);
+            this.buttonInfo_KRV.TabIndex = 0;
+            this.buttonInfo_KRV.Text = "Информация о разработчике";
+            this.buttonInfo_KRV.UseVisualStyleBackColor = true;
+            this.buttonInfo_KRV.Click += new System.EventHandler(this.buttonInfo_KRV_Click);
+            // 
+            // buttonAdd_KRV
+            // 
+            this.buttonAdd_KRV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAdd_KRV.Location = new System.Drawing.Point(6, 153);
+            this.buttonAdd_KRV.Name = "buttonAdd_KRV";
+            this.buttonAdd_KRV.Size = new System.Drawing.Size(228, 60);
+            this.buttonAdd_KRV.TabIndex = 0;
+            this.buttonAdd_KRV.Text = "Добавить книгу";
+            this.buttonAdd_KRV.UseVisualStyleBackColor = true;
+            this.buttonAdd_KRV.Click += new System.EventHandler(this.buttonAdd_KRV_Click);
+            // 
+            // buttonDownload_KRV
+            // 
+            this.buttonDownload_KRV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDownload_KRV.Location = new System.Drawing.Point(6, 87);
+            this.buttonDownload_KRV.Name = "buttonDownload_KRV";
+            this.buttonDownload_KRV.Size = new System.Drawing.Size(228, 60);
+            this.buttonDownload_KRV.TabIndex = 0;
+            this.buttonDownload_KRV.Text = "Сохранить дневник";
+            this.buttonDownload_KRV.UseVisualStyleBackColor = true;
+            this.buttonDownload_KRV.Click += new System.EventHandler(this.buttonSave_KRV_Click);
+            // 
+            // openFileDialogTable_KRV
+            // 
+            this.openFileDialogTable_KRV.FileName = "openFileDialog1";
+            // 
+            // textBoxRead_KRV
+            // 
+            this.textBoxRead_KRV.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxRead_KRV.Location = new System.Drawing.Point(776, 420);
+            this.textBoxRead_KRV.Name = "textBoxRead_KRV";
+            this.textBoxRead_KRV.ReadOnly = true;
+            this.textBoxRead_KRV.Size = new System.Drawing.Size(240, 45);
+            this.textBoxRead_KRV.TabIndex = 3;
+            // 
+            // labelRead_KRV
+            // 
+            this.labelRead_KRV.AutoSize = true;
+            this.labelRead_KRV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelRead_KRV.Location = new System.Drawing.Point(777, 392);
+            this.labelRead_KRV.Name = "labelRead_KRV";
+            this.labelRead_KRV.Size = new System.Drawing.Size(120, 25);
+            this.labelRead_KRV.TabIndex = 4;
+            this.labelRead_KRV.Text = "Прочитано:";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1028, 477);
-            this.Controls.Add(this.buttonSearch_KRV);
-            this.Controls.Add(this.textBoxSearch_KRV);
+            this.Controls.Add(this.labelRead_KRV);
+            this.Controls.Add(this.textBoxRead_KRV);
             this.Controls.Add(this.groupBoxMoves_KRV);
             this.Controls.Add(this.dataGridViewTable_KRV);
             this.Controls.Add(this.menuStrip_KRV);
@@ -303,12 +307,13 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialogTable_KRV;
         private System.Windows.Forms.OpenFileDialog openFileDialogTable_KRV;
         private System.Windows.Forms.ToolTip toolTipWiki_KRV;
-        private System.Windows.Forms.TextBox textBoxSearch_KRV;
-        private System.Windows.Forms.Button buttonSearch_KRV;
         private System.Windows.Forms.DataGridViewTextBoxColumn Autor_KRV;
         private System.Windows.Forms.DataGridViewTextBoxColumn Book_KRV;
         private System.Windows.Forms.DataGridViewTextBoxColumn Year_KRV;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Finished_KRV;
+        private System.Windows.Forms.TextBox textBoxRead_KRV;
+        private System.Windows.Forms.Label labelRead_KRV;
+        private System.Windows.Forms.Button buttonRefresh_KRV;
     }
 }
 
