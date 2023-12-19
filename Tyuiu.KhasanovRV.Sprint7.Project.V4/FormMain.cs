@@ -122,18 +122,19 @@ namespace Tyuiu.KhasanovRV.Sprint7.Project.V4
             int rows = dataGridViewTable_KRV.RowCount;
             int columns = dataGridViewTable_KRV.ColumnCount;
             string str;
+            string[,] matrix = new string[rows, columns];
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < columns; j++)
                 {
                     str = "";
                     str += dataGridViewTable_KRV.Rows[i].Cells[j].Value;
-                    arrayValues[i, j] = str;
+                    matrix[i, j] = str;
                     
                 }
                 
             }
-            textBoxRead_KRV.Text = ds.Readed(arrayValues);
+            textBoxRead_KRV.Text = ds.Readed(matrix);
         }
 
         private void dataGridViewTable_KRV_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
