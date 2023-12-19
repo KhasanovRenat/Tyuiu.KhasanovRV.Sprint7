@@ -53,6 +53,7 @@
             this.toolTipWiki_KRV = new System.Windows.Forms.ToolTip(this.components);
             this.textBoxRead_KRV = new System.Windows.Forms.TextBox();
             this.labelRead_KRV = new System.Windows.Forms.Label();
+            this.обновитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip_KRV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable_KRV)).BeginInit();
             this.groupBoxMoves_KRV.SuspendLayout();
@@ -77,7 +78,8 @@
             this.openToolStripMenuItem_KRV,
             this.saveToolStripMenuItem_KRV,
             this.addToolStripMenuItem_KRV,
-            this.infoToolStripMenuItem_KRV});
+            this.infoToolStripMenuItem_KRV,
+            this.обновитьToolStripMenuItem});
             this.действияToolStripMenuItem.Name = "действияToolStripMenuItem";
             this.действияToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
             this.действияToolStripMenuItem.Text = "Действия";
@@ -113,14 +115,14 @@
             // aboutProgramToolStripMenuItem_KRV
             // 
             this.aboutProgramToolStripMenuItem_KRV.Name = "aboutProgramToolStripMenuItem_KRV";
-            this.aboutProgramToolStripMenuItem_KRV.Size = new System.Drawing.Size(118, 24);
+            this.aboutProgramToolStripMenuItem_KRV.Size = new System.Drawing.Size(118, 26);
             this.aboutProgramToolStripMenuItem_KRV.Text = "О программе";
             this.aboutProgramToolStripMenuItem_KRV.Click += new System.EventHandler(this.aboutProgramToolStripMenuItem_KRV_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(67, 26);
             this.exitToolStripMenuItem.Text = "Выход";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -171,8 +173,7 @@
             // 
             // groupBoxMoves_KRV
             // 
-            this.groupBoxMoves_KRV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxMoves_KRV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxMoves_KRV.BackColor = System.Drawing.SystemColors.Menu;
             this.groupBoxMoves_KRV.Controls.Add(this.buttonOpen_KRV);
             this.groupBoxMoves_KRV.Controls.Add(this.buttonRefresh_KRV);
@@ -247,6 +248,7 @@
             // 
             // textBoxRead_KRV
             // 
+            this.textBoxRead_KRV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxRead_KRV.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxRead_KRV.Location = new System.Drawing.Point(776, 420);
             this.textBoxRead_KRV.Name = "textBoxRead_KRV";
@@ -256,6 +258,7 @@
             // 
             // labelRead_KRV
             // 
+            this.labelRead_KRV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelRead_KRV.AutoSize = true;
             this.labelRead_KRV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelRead_KRV.Location = new System.Drawing.Point(777, 392);
@@ -263,6 +266,13 @@
             this.labelRead_KRV.Size = new System.Drawing.Size(120, 25);
             this.labelRead_KRV.TabIndex = 4;
             this.labelRead_KRV.Text = "Прочитано:";
+            // 
+            // обновитьToolStripMenuItem
+            // 
+            this.обновитьToolStripMenuItem.Name = "обновитьToolStripMenuItem";
+            this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.обновитьToolStripMenuItem.Text = "Обновить";
+            this.обновитьToolStripMenuItem.Click += new System.EventHandler(this.buttonRefresh_KRV_Click);
             // 
             // FormMain
             // 
@@ -314,6 +324,7 @@
         private System.Windows.Forms.TextBox textBoxRead_KRV;
         private System.Windows.Forms.Label labelRead_KRV;
         private System.Windows.Forms.Button buttonRefresh_KRV;
+        private System.Windows.Forms.ToolStripMenuItem обновитьToolStripMenuItem;
     }
 }
 

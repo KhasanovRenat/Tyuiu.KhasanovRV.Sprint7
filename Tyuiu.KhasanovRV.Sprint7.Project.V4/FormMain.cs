@@ -61,7 +61,7 @@ namespace Tyuiu.KhasanovRV.Sprint7.Project.V4
 
         private void buttonSave_KRV_Click(object sender, EventArgs e)
         {
-            saveFileDialogTable_KRV.FileName = "OutPutFileTask7.csv";
+            saveFileDialogTable_KRV.FileName = "OutPutFileProject.csv";
             saveFileDialogTable_KRV.InitialDirectory = Directory.GetCurrentDirectory();
             saveFileDialogTable_KRV.ShowDialog();
 
@@ -121,14 +121,15 @@ namespace Tyuiu.KhasanovRV.Sprint7.Project.V4
         {
             int rows = dataGridViewTable_KRV.RowCount;
             int columns = dataGridViewTable_KRV.ColumnCount;
-            string str = "";
+            string str;
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < columns; j++)
                 {
+                    str = "";
                     str += dataGridViewTable_KRV.Rows[i].Cells[j].Value;
                     arrayValues[i, j] = str;
-                    str = "";
+                    
                 }
                 
             }
